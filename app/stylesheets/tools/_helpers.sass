@@ -1,0 +1,54 @@
+
+.body-fixed
+  overflow: hidden
+.vertically-centred-content
+  height: 100%
+  +display(flex)
+  +flex-flow(column nowrap)
+  +justify-content(center)
+
+.text-center
+  text-align: center
+
+.text-right
+  text-align: right
+
+.text-left
+  text-align: left
+
+.dev
+  background: rgba(0,0,0, .15)
+
+body.dev *
+  background-color: rgba(0,0,0,0.05)
+
+=dev()
+  background-color: rgba(0,0,0,0.05)
+
+%all-caps
+  font-weight: 600
+  text-transform: uppercase
+
+%ir
+  background-color: transparent
+  border: 0
+  overflow: hidden
+  &:before
+    content: ""
+    display: block
+    width: 0
+    height: 100%
+
+%clearfix
+  &:before,
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+
+%no-bullets
+  list-style: none
+  margin-top: 0
+  margin-left: 0
+  padding-left: 0

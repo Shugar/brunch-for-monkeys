@@ -1,0 +1,21 @@
+{
+  "name": "brunch-for-monkeys",
+  "version": "0.0.0",
+  "authors": [
+    "shugar <shugar348@gmail.com>"
+  ],
+  "description": "Brunch skeleton for monkeys",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "slick-carousel": "~1.5.8"
+  }
+}

@@ -1,0 +1,150 @@
+@function Rem($size)
+  $remSize: $size / $base-font-size
+  @return $remSize * 1rem
+
+
+
+@function em($size, $context: $base-font-size)
+  @return $size / $context + em
+
+// Px to rem sixing
+@function rem($size, $context: $base-font-size)
+  @return $size / $context + rem
+
+// Px to rem sizing with px fallout
+=font-size($size)
+  font-size: $size + px
+  font-size: $size / $base-font-size + rem
+
+
+=size($width: auto, $height: $width)
+  width: $width
+  height: $height
+
+// =thin($size: 1rem, $line: 1.5rem, $space: 0.02em)
+//   @if unit($size) == ""
+//     $size: Rem($size)
+//   @if unit($line) == ""
+//     $line: Rem($line)
+//   font: 100 #{$size}/#{$line} $code
+//   -webkit-font-smoothing: antialiased
+//   letter-spacing: $space
+
+
+=light($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: Rem($size)
+  @if unit($line) == ""
+    $line: Rem($line)
+  font: 300 #{$size}/#{$line} $myriad
+  // -webkit-font-smoothing: antialiased
+  letter-spacing: $space
+
+
+=regular($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: Rem($size)
+  @if unit($line) == ""
+    $line: Rem($line)
+  font: 400 #{$size}/#{$line} $opens
+  // -webkit-font-smoothing: antialiased
+  letter-spacing: $space
+
+
+
+
+=respond-to($screen)
+  @if $screen == small
+    @media only screen and (min-width: $small)
+      @content
+  @else if $screen == medium
+    @media only screen and (min-width: $medium)
+      @content
+  @else if $screen == big
+    @media only screen and (min-width: $big)
+      @content
+  @else
+    @media only screen and (min-width: $screen)
+      @content
+
+
+=mobile()
+  +iphone3(portrait)
+    @content
+  +iphone4(portrait)
+    @content
+  +iphone5(portrait)
+    @content
+  +iphone6(portrait)
+    @content
+  +max-screen(630px)
+    @content
+
+=tablet()
+  // +screen(631px,800px)
+  +iphone3(landscape)
+    @content
+  +iphone4(landscape)
+    @content
+  +iphone5(landscape)
+    @content
+  +iphone6-plus
+    @content
+  +ipad(portrait)
+    @content
+  +screen(631px, 800px)
+    @content
+
+=normal()
+  +screen(801px, 1999px)
+    @content
+
+=hd()
+  +min-screen(1200px)
+    @content
+
+
+
+
+// Selection
+=selection
+  background: #b3d4fc
+  text-shadow: none
+
+
+=respond-to($screen)
+  @media only screen and (min-width: $screen)
+    @content
+
+
+=spinner($width, $height)
+  height: $height
+  display: inline-block
+  position: relative
+  width: $width
+
+
+=spinner-bar
+  $time: 0.08333
+  @content
+  @for $i from 1 through 12
+    .spinner-bar--#{$i}
+      -webkit-animation-delay: 0 - -$time * $i + s
+      animation-delay: 0 - -$time * $i + s
+      -webkit-transform: rotate(30 * $i + deg) translate(0, -142%)
+      transform: rotate(30 * $i + deg) translate(0, -142%)
+
+=bar
+  background-color: #fff
+  border-bottom: 1px solid $primary-color
+  box-shadow: 0 1px 2px rgba(black, 0.03)
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: 2
+
+=btn($color, $text-color: white)
+  background-color: $color
+  border-color: darken($color, 6%)
+  color: $text-color

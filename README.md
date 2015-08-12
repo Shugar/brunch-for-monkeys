@@ -1,1 +1,1 @@
-Brunch-with-monkey
+brunch-for-monkeys

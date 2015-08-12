@@ -1,0 +1,280 @@
+// COLORS
+
+
+$white: #ffffff
+$orange: #ef7d00
+$yellow: #F5A623
+$purple: #a4519a
+$bright-purple: #bd10e0
+$green: #58c928
+$pink: #DB9DD8
+$dark-pink: #BD85BD
+$dark-blue: #4a90e2
+$pink-hr: #F1C3E3
+$black: #000000
+$light-gray: #9F9F9F
+$mid-gray: #666666
+$dark-gray: #9F9F9F
+$gray: #9b9b9b
+
+$gray-form: #A8A8A8
+$gray-form-labels: #9E9E9E
+
+$primary-color: $gray
+
+$base-font-size: 16
+$tablet-font-size: 14
+$mobile-font-size: 12
+
+
+// Custom
+
+$text-color: $dark-gray
+
+$placeholder-color-reversed: rgba(255,255,255,0.4)
+$placeholder-color: rgba(0,0,0,0.3)
+
+$gradient-colors: $orange, $purple
+$cta-background: $bright-purple
+
+
+
+$asset-pipeline: true
+
+// @include font-face('opens', '/fonts/x7EDs2yl', 400, normal)
+// @include font-face('opens', '/fonts/zeA7vVJJ', 300, normal)
+// @include font-face('opens', '/fonts/zPrUrCP2', 600, normal)
+
+$opens: "Open Sans", sans-serif
+$myriad: 'Myriad Pro', sans-serif
+
+
+
+$title: $opens
+$body: $opens
+
+*
+  box-sizing: border-box
+
+
+.container
+  width: 100%
+  max-width: 1024px
+  min-height: 100%
+  margin: 0 auto
+  position: relative
+  padding-left: 30px
+  padding-right: 30px
+  text-align: center
+  +clearfix
+  +tablet
+    padding: 0 20px
+  +mobile
+    padding: 0 10px
+
+
+
+.row
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: space-around
+
+  &.centered
+    justify-content: center
+
+  &.stack
+    +mobile
+      flex-direction: column
+    &.centered
+      +mobile
+        align-items: center
+
+
+
+.column
+  display: flex
+  flex-flow: column nowrap
+  &.centered
+    justify-content: center
+
+
+html,body
+  font-size: #{$base-font-size}px
+  line-height: #{$base-font-size*1.5}px
+  color: $black
+
+  +tablet
+    font-size: #{$tablet-font-size}px
+
+  +mobile
+    font-size: #{$mobile-font-size}px
+
+
+
+
+
+html, button, input, select, textarea
+  color: $black
+  font-family: $body
+  font-weight: 300
+  text-rendering: optimizeLegibility
+
+
+
+
+// http://modularscale.com/scale/?px1=21&px2=800&ra1=1.618&ra2=0
+
+
+h1
+  +font-size(44)
+
+h2
+  +font-size(26)
+  +respond-to(small)
+    +font-size(33)
+
+h3
+  +font-size(22)
+  +respond-to(small)
+    +font-size(27)
+
+h4
+  +font-size(18)
+  +respond-to(small)
+    +font-size(22)
+
+h5
+  +font-size(16)
+  +respond-to(small)
+    +font-size(18)
+
+h6
+  +font-size(16)
+  +respond-to(small)
+    +font-size(18)
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  text-align: left
+  font-weight: 200
+  margin: 0 0 rem(12)
+  +respond-to(small)
+    margin-bottom: rem(16)
+
+p,
+ul,
+ol,
+dl
+  margin: 0 0 1em
+  text-align: left
+  &:last-child
+    margin-bottom: 0
+  +respond-to(small)
+    +font-size(22)
+    margin: 0 0 rem(33)
+
+dt
+  font-weight: 400
+
+.lead
+  +font-size(20)
+  +respond-to(small)
+    +font-size(24)
+
+
+html
+  background-color: #fff
+
+body
+  font-size: 1em
+  line-height: 1.5
+
+\::-moz-selection
+  +selection
+
+\::selection
+  +selection
+
+figure
+  margin-bottom: rem(33)
+  img
+    display: block
+    margin-bottom: rem(11)
+
+figcaption
+  // @include font-size(22);
+  +respond-to(small)
+    +font-size(22)
+
+img
+  height: auto
+  max-width: 100%
+  vertical-align: middle
+
+blockquote
+  font-style: italic
+  margin-top: 0
+  margin-right: 0
+  margin-left: 0
+  p
+    +font-size(18)
+    +respond-to(small)
+      +font-size(24)
+  .cite
+    font-style: normal
+    &:before
+      content: '\2014'
+
+pre
+  margin: 0
+
+code
+  background: rgba(0,0,0,0.2)
+  border-radius: 4px
+  font-size: 0.8em
+  padding: 0.2em 0.5em
+  color: inherit
+  position: relative
+  top: -1px
+  font-family: 'Inconsolata', sans-serif
+  +respond-to(small)
+    +font-size(22)
+
+a
+  color: $black
+  text-decoration: none
+  -webkit-transition: all .25s ease
+  transition: all .25s ease
+  &:hover
+    color: $dark-blue
+
+  .colored &
+    color: $white
+    &:hover
+      color: $white
+      opacity: 0.8
+
+b
+  font-weight: 600
+
+fieldset
+  border: 0
+  margin: 0
+  padding: 0
+
+textarea
+  line-height: 1.6
+  resize: vertical
+
+
+.colored
+  color: $white
+p
+  color: inherit
+
+
