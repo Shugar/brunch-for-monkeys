@@ -28,7 +28,7 @@
     "jaded-brunch": "~1.7.11"
   },
   "dependencies": {
+    "autoprefixer-brunch": "^1.8.5",
     "sass-brunch": "^1.8.3"
   }
-
 }

@@ -15,3 +15,6 @@ exports.config =
     jaded:
       jade:
         pretty: yes
+      autoprefixer:
+        browsers: ["last 1 version", "> 1%", "ie 8", "ie 7"]
+        cascade: false
