@@ -6,4 +6,4 @@
 
 Server listening on localhost:3333
 
-Официальный сайт - http://brunch.io/
+http://brunch.io/
