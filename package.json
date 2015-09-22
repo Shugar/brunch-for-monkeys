@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "autoprefixer-brunch": "^1.8.5",
+    "postcss": "^4.1.9",
     "sass-brunch": "^1.8.3"
   }
 }
